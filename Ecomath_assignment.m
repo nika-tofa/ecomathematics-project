@@ -2,8 +2,6 @@ clear all;
 close all;
 clc;
 
-%% Task
-
 % parameters
 A = 100;    % total area of the forest
 K = 90*A;   % the carrying capacity of the forest, [m^3]
