@@ -12,7 +12,6 @@ delta = par(8);
 T = par(9);
 beta=par(11);
 
-
 h = zeros(1,T+1);
 V = zeros(1,T+1);
 PV_arr = zeros(1,T+1);
@@ -20,6 +19,7 @@ g = zeros(1,T+1);
 
 V(1)= par(10); %initial volume
 g(1)= par(10);
+
 counter=0; %needed to define the b_i function in the loop
 
 for t = 2:T+1
@@ -32,10 +32,8 @@ for t = 2:T+1
     
     V(t) = g(t)-h(t);
     
-    PV_arr(t) = (p*h(t)-(rem(t-1,Tper)==0)*c)/(1+delta)^(t-1); % for the array of profits
-    
+    PV_arr(t) = (p*h(t)-(rem(t-1,Tper)==0)*c)/(1+delta)^(t-1); % for the array of profits    
 end
-
 
 pv = sum(PV_arr); 
 pv_vect=PV_arr;
